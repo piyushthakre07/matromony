@@ -7,6 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+@Getter @Setter @ToString
 @Entity
 @Table(name = "CITY_MASTER")
 public class CityMaster {
@@ -24,37 +28,5 @@ public class CityMaster {
 
 	@Column(name = "is_default")
 	private String isdefault;
-
-	public Integer getCityId() {
-		return cityId;
-	}
-
-	public void setCityId(Integer cityId) {
-		this.cityId = cityId;
-	}
-
-	public String getCityName() {
-		return cityName;
-	}
-
-	public void setCityName(String cityName) {
-		this.cityName = cityName;
-	}
-
-	public String getActive() {
-		return active;
-	}
-
-	public void setActive(String active) {
-		this.active = active;
-	}
-
-	public String getIsdefault() {
-		return isdefault;
-	}
-
-	public void setIsdefault(String isdefault) {
-		this.isdefault = isdefault;
-	}
 
 }

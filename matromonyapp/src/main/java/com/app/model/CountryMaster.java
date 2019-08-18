@@ -12,6 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+@Getter @Setter @ToString
 @Entity
 @Table(name = "COUNTRYMASTER")
 public class CountryMaster {
@@ -31,47 +35,6 @@ public class CountryMaster {
 	private String isdefault;
 
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "countryMaster")
-	// @OrderColumn(name = "countryId")
 	List<StateMaster> StateMasterList;
-
-	public Integer getCountryId() {
-		return countryId;
-	}
-
-	public void setCountryId(Integer countryId) {
-		this.countryId = countryId;
-	}
-
-	public String getCountryName() {
-		return countryName;
-	}
-
-	public void setCountryName(String countryName) {
-		this.countryName = countryName;
-	}
-
-	public String getActive() {
-		return active;
-	}
-
-	public void setActive(String active) {
-		this.active = active;
-	}
-
-	public String getIsdefault() {
-		return isdefault;
-	}
-
-	public void setIsdefault(String isdefault) {
-		this.isdefault = isdefault;
-	}
-
-	public List<StateMaster> getStateMasterList() {
-		return StateMasterList;
-	}
-
-	public void setStateMasterList(List<StateMaster> stateMasterList) {
-		StateMasterList = stateMasterList;
-	}
 
 }
