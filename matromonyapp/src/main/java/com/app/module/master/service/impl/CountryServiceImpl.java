@@ -10,7 +10,6 @@ import com.app.beans.CountryBean;
 import com.app.beans.StateBean;
 import com.app.model.CountryMaster;
 import com.app.model.StateMaster;
-import com.app.model.User;
 import com.app.module.master.dao.ICountryDao;
 import com.app.module.master.service.ICountryService;
 
