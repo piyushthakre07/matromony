@@ -15,7 +15,7 @@ import com.app.model.CountryMaster;
 import com.app.module.master.dao.ICountryDao;
 
 @Repository
-public class CountryDaoImpl implements ICountryDao {
+public class CountryDaoImpl  implements ICountryDao {
 
 	@Autowired
 	SessionFactory sessionFactory;

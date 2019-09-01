@@ -25,11 +25,11 @@ public class Temporary {
 	@Column(name= "profile_for")
 	private String profileFor;
 	
-	@Column(name= "f_name")
-	private String fName;
+	@Column(name= "first_name")
+	private String firstName;
 	
-	@Column(name= "l_name")
-	private String lName;
+	@Column(name= "last_name")
+	private String lastName;
 	
 	@Column(name= "gender")
 	private String gender;
@@ -38,7 +38,7 @@ public class Temporary {
 	private Date dateOfBirth;
 	
 	@Column(name= "contact_number")
-	private Integer contactNumber;
+	private String contactNumber;
 	
 	@Column(name= "email_id")
 	private String emailId;

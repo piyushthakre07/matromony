@@ -1,1 +1,7 @@
 /target/
+/bin/
+/STS Workspace/
+/.gitignore
+/.classpath
+/.project
+/pom.xml

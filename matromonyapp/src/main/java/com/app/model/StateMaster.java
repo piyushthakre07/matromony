@@ -1,5 +1,7 @@
 package com.app.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,7 +18,9 @@ import lombok.ToString;
 @Getter @Setter @ToString
 @Entity
 @Table(name = "STATE_MASTER")
-public class StateMaster {
+public class StateMaster extends CommonPropertyEntity implements Serializable{
+
+	private static final long serialVersionUID = 1232338944575220277L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

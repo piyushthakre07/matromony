@@ -1,5 +1,7 @@
 package com.app.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +20,10 @@ import lombok.ToString;
 @Getter @Setter @ToString
 @Entity
 @Table(name = "ProfileFor")
-public class ProfileFor {
+public class ProfileFor extends CommonPropertyEntity implements Serializable{
+	
+	private static final long serialVersionUID = 71562875273862853L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "profile_id")

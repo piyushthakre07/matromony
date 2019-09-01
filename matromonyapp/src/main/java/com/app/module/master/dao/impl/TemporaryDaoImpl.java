@@ -1,19 +1,12 @@
 package com.app.module.master.dao.impl;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import com.app.model.Temporary;
+import com.app.common.dao.impl.CrudDao;
 import com.app.module.master.dao.ITemporaryDao;
+@Repository
+public class TemporaryDaoImpl extends CrudDao implements ITemporaryDao {
 
-public class TemporaryDaoImpl implements ITemporaryDao {
-
-	@Autowired
-	SessionFactory sessionFactory;
-	@Override
-	public boolean saveTempDetails(Temporary temporary) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+	
+	
 }

@@ -1,5 +1,6 @@
 package com.app.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -18,7 +19,9 @@ import lombok.ToString;
 @Getter @Setter @ToString
 @Entity
 @Table(name = "COUNTRYMASTER")
-public class CountryMaster {
+public class CountryMaster extends CommonPropertyEntity implements Serializable{
+
+	private static final long serialVersionUID = 8787518967743911148L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
