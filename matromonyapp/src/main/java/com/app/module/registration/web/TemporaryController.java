@@ -23,22 +23,13 @@ public class TemporaryController {
 	ITemporaryService temporaryService;
 
 	@RequestMapping(value = "/saveUser", method = RequestMethod.POST, produces = "application/json")
-	public @ResponseBody ResponseEntity<?> saveTempDetails(HttpServletRequest request, @RequestBody TemporaryBean temporaryBean) {
-		String message = "";
+	public @ResponseBody ResponseEntity<?> saveTempDetails(HttpServletRequest request,
+			@RequestBody TemporaryBean temporaryBean) {
 		StatusBean statusBean = new StatusBean();
-		boolean status = temporaryService.saveTempDetails(temporaryBean);
-		if (status) {
-			message = "Success";
-			statusBean.setMessage(message);
-			statusBean.setSatusCode("200");
-			statusBean.setStatus(true);
+		statusBean = temporaryService.saveTempDetails(temporaryBean);
+		if (statusBean.getStatus()) {
 			return new ResponseEntity<StatusBean>(statusBean, HttpStatus.OK);
 		} else {
-			message = "Fail";
-			statusBean.setMessage(message);
-			statusBean.setSatusCode("400");
-			statusBean.setStatus(false);
-			statusBean.setErrorCode("1001");
 			return new ResponseEntity<StatusBean>(statusBean, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}

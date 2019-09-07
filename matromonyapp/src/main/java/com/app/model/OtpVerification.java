@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Type;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -26,8 +28,9 @@ public class OtpVerification {
 	@Column(name = "contact_number")
 	private String contactNumber;
 	
+	@Type(type= "org.hibernate.type.NumericBooleanType")
 	@Column(name = "is_verified")
-	private String isVerified;
+	private boolean verifiedStatus;
 	
 	@Column(name = "otp")
 	private String otp;
@@ -43,6 +46,13 @@ public class OtpVerification {
 	
 	@Column(name = "functionality")
 	private String functionality;
+	
+	@Type(type= "org.hibernate.type.NumericBooleanType")
+	private boolean active;
+	
+	@Column(name = "max_otp_attempt_status")
+	@Type(type= "org.hibernate.type.NumericBooleanType")
+	private boolean maxOtpAttemptStatus;
 
 
 }
